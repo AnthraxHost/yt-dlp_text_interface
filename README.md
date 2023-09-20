@@ -1,5 +1,5 @@
 # yt-dlp_text_interface
-A small batch program to interact with an existing install of yt-dlp in your system.
+A small batch program to download mp3 and mp4 files using an existing install of yt-dlp in your system.
 
 ### Functionality
 When executed, a console window will prompt you to:
