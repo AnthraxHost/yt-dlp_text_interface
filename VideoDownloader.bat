@@ -1,6 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
 
+Rem Change desired output Directory
+set "output_dir=%UserProfile%/Downloads/"
+
 :start
 REM Display menu for format selection
 echo Select the desired format:
@@ -94,10 +97,10 @@ set "video_title=!video_title:~0,100!"
 
 REM Execute yt-dlp with the chosen format and URL, using the sanitized and trimmed filename
 if "%extension%"=="mp3" (
-    yt-dlp --config "C:\Users\starp\yt-dlp.conf" --extract-audio --audio-format mp3 --output "D:\Users\starp\Downloads\!video_title!.mp3" --format "!format!" --windows-filenames "!video_url!"
+    yt-dlp --config "%UserProfile%\yt-dlp.conf" --extract-audio --audio-format mp3 --output "%output_dir%/!video_title!.mp3" --format "!format!" --windows-filenames "!video_url!"
 ) else (
-    yt-dlp --config "C:\Users\starp\yt-dlp.conf" --output "D:\Users\starp\Downloads\!video_title!.mp4" --format "!format!" --windows-filenames "!video_url!"
+    yt-dlp --config "%UserProfile%\yt-dlp.conf" --output "%output_dir%/!video_title!.mp4" --format "!format!" --windows-filenames "!video_url!"
 )
 
-echo Download completed. The file has been saved as: "!video_title!" in: D:\Users\starp\Downloads\
+echo Download completed. The file has been saved as: "!video_title!" in: 
 pause
