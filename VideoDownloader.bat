@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 Rem Change desired output Directory
-set "output_dir=D:/Users/starp/Downloads/"
+set "output_dir=%UserProfile%/Downloads"
 
 :start
 REM Display menu for format selection
