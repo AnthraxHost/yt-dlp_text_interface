@@ -99,5 +99,5 @@ if "%extension%"=="mp3" (
     yt-dlp --config "%UserProfile%\yt-dlp.conf" --output "%output_dir%/!video_title!_%quality_label%.mp4" --format "!format!" --windows-filenames "!video_url!"
 )
 
-echo Download completed. The file has been saved as: "!video_title!" in: 
+echo Download completed. The file has been saved as: "!video_title!" in: %output_dir%
 pause
