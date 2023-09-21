@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 Rem Change desired output Directory
-set "output_dir=%UserProfile%/Downloads/"
+set "output_dir=D:/Users/starp/Downloads/"
 
 :start
 REM Display menu for format selection
@@ -89,17 +89,14 @@ set "video_title=!video_title:,-=-!"
 set "video_title=!video_title:.=-!"
 set "video_title=!video_title:"=!"
 
-REM Append the quality label to the video title
-set "video_title=!video_title!_!quality_label!"
-
 REM Trim the video title to a maximum length of 100 characters
 set "video_title=!video_title:~0,100!"
 
 REM Execute yt-dlp with the chosen format and URL, using the sanitized and trimmed filename
 if "%extension%"=="mp3" (
-    yt-dlp --config "%UserProfile%\yt-dlp.conf" --extract-audio --audio-format mp3 --output "%output_dir%/!video_title!.mp3" --format "!format!" --windows-filenames "!video_url!"
+    yt-dlp --config "%UserProfile%\yt-dlp.conf" --extract-audio --audio-format mp3 --output "%output_dir%/!video_title!_%quality_label%.mp3" --format "!format!" --windows-filenames "!video_url!"
 ) else (
-    yt-dlp --config "%UserProfile%\yt-dlp.conf" --output "%output_dir%/!video_title!.mp4" --format "!format!" --windows-filenames "!video_url!"
+    yt-dlp --config "%UserProfile%\yt-dlp.conf" --output "%output_dir%/!video_title!_%quality_label%.mp4" --format "!format!" --windows-filenames "!video_url!"
 )
 
 echo Download completed. The file has been saved as: "!video_title!" in: 
